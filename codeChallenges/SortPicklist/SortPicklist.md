@@ -34,7 +34,7 @@ const data = [
     type: Folder,
     rowId: 1,
     itemId: 426,
-    name: "name"
+    name: "name",
     info: "",
     info2: "",
   },
@@ -42,7 +42,7 @@ const data = [
     type: People,
     rowId: 1,
     itemId: 121,
-    name: "name"
+    name: "name",
     info: "",
     info2: "",
   },
@@ -55,7 +55,7 @@ $data = [
     "type" => "Folder",
     "rowId" => 1,
     "itemId" => 426,
-    "name" => "folder1"
+    "name" => "folder1",
     "info" => "",
     "info2" => "",
   ],
@@ -63,7 +63,7 @@ $data = [
     "type" => "People",
     "rowId" => 1,
     "itemId" => 121,
-    "name" => "person8"
+    "name" => "person8",
     "info" => "",
     "info2" => "",
   ],
@@ -76,13 +76,13 @@ $data = [
 const data = {
   Folder: [
     {
-      label: "folder1"
+      label: "folder1",
       value: 426,
     },
   ],
   People: [
     {
-      label: "person8"
+      label: "person8",
       value: 121,
     },
   ]
@@ -93,13 +93,13 @@ const data = {
 $data = [
   "Folder" => [
     [
-      "label" => "folder1"
+      "label" => "folder1",
       "value" => 426,
     ],
   ],
   "People" => [
     [
-      "label" => "person8"
+      "label" => "person8",
       "value" => 121,
     ],
   ]
@@ -118,7 +118,7 @@ const data = [
     type: Folder,
     rowId: 1,
     itemId: 517,
-    name: "Benefits"
+    name: "Benefits",
     info: "",
     info2: "",
   },
@@ -126,7 +126,7 @@ const data = [
     type: Folder,
     rowId: 1,
     itemId: 519,
-    name: "Benefits/Backend"
+    name: "Benefits/Backend",
     info: "",
     info2: "",
   },
@@ -140,11 +140,11 @@ const options = {
       label: "Benefits",
       options: [ // this property implies a "group"
         {
-          label: "Benefits"
+          label: "Benefits",
           value: 517,
         },
         {
-          label: "Backend"
+          label: "Backend",
           value: 519,
         },
       ]
@@ -159,7 +159,7 @@ $data = [
     "type" => "Folder",
     "rowId" => 1,
     "itemId" => 517,
-    "name" => "Benefits"
+    "name" => "Benefits",
     "info" => "",
     "info2" => "",
   ],
@@ -167,7 +167,7 @@ $data = [
     "type" => "People",
     "rowId" => 1,
     "itemId" => 519,
-    "name" => "Benefits/Backend"
+    "name" => "Benefits/Backend",
     "info" => "",
     "info2" => "",
   ],
@@ -180,11 +180,11 @@ $options = [
     "label" => "Benefits",
     "options" => [ // this property implies a "group"
       [
-        "label" => "Benefits"
+        "label" => "Benefits",
         "value" => 517,
       ],
       [
-        "label" => "Backend"
+        "label" => "Backend",
         "value" => 519,
       ],
     ],
