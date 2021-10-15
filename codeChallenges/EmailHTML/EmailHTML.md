@@ -29,6 +29,7 @@
     }
     .someOtherClass {
       width: 80%;
+      height: 20px;
     }
   </style>
 </head>
@@ -56,6 +57,7 @@
     }
     .someOtherClass {
       width: 80%;
+      height: 20px;
     }
   </style>
 </head>
@@ -65,7 +67,7 @@
       <tbody>
         <tr>
           <td class="some-class" style="width: 50%;"><h1>Header</h1></td>
-          <td class="someOtherClass" style="width: 80%;"><p>Content</p></td>
+          <td class="someOtherClass" style="width: 80%; height: 20px;"><p>Content</p></td>
         </tr>
       </tbody>
     </table>
@@ -194,6 +196,9 @@ console.log(emailHTML);
 - SQL:
 
 ```sql
+DROP FUNCTION IF EXISTS [dbo].[FormatHTML]
+GO
+
 CREATE FUNCTION [dbo].[FormatHTML] (
     @HTML VARCHAR(MAX)
 )

@@ -104,7 +104,7 @@ DECLARE eBacon VARCHAR(MAX) = '{
 };'
 
 DECLARE @Bank TABLE (
-  id   INT IDENTITY
+  id   INT IDENTITY,
   Cash MONEY
 )
 

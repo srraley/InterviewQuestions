@@ -34,7 +34,7 @@ const data = [
     type: Folder,
     rowId: 1,
     itemId: 426,
-    name: "name",
+    name: "Benefits",
     info: "",
     info2: "",
   },
@@ -42,7 +42,15 @@ const data = [
     type: People,
     rowId: 1,
     itemId: 121,
-    name: "name",
+    name: "John Doe",
+    info: "",
+    info2: "",
+  },
+  {
+    type: People,
+    rowId: 1,
+    itemId: 128,
+    name: "Alex Tato",
     info: "",
     info2: "",
   },
@@ -55,7 +63,7 @@ $data = [
     "type" => "Folder",
     "rowId" => 1,
     "itemId" => 426,
-    "name" => "folder1",
+    "name" => "Benefits",
     "info" => "",
     "info2" => "",
   ],
@@ -63,7 +71,15 @@ $data = [
     "type" => "People",
     "rowId" => 1,
     "itemId" => 121,
-    "name" => "person8",
+    "name" => "John Doe",
+    "info" => "",
+    "info2" => "",
+  ],
+  [
+    "type" => "People",
+    "rowId" => 1,
+    "itemId" => 128,
+    "name" => "Alex Tato",
     "info" => "",
     "info2" => "",
   ],
@@ -76,14 +92,18 @@ $data = [
 const data = {
   Folder: [
     {
-      label: "folder1",
+      label: "Benefits",
       value: 426,
     },
   ],
   People: [
     {
-      label: "person8",
+      label: "John Doe",
       value: 121,
+    },
+    {
+      label: "Alex Tato",
+      value: 128,
     },
   ]
 };
@@ -93,13 +113,17 @@ const data = {
 $data = [
   "Folder" => [
     [
-      "label" => "folder1",
+      "label" => "Benefits",
       "value" => 426,
     ],
   ],
   "People" => [
     [
-      "label" => "person8",
+      "label" => "John Doe",
+      "value" => 121,
+    ],
+    [
+      "label" => "Alex Tato",
       "value" => 121,
     ],
   ]
@@ -164,7 +188,7 @@ $data = [
     "info2" => "",
   ],
   [
-    "type" => "People",
+    "type" => "Folder",
     "rowId" => 1,
     "itemId" => 519,
     "name" => "Benefits/Backend",
