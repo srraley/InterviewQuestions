@@ -8,8 +8,10 @@ eBacon is a software company that focuses on certified payroll and fringe benefi
 ## Which Test to Take?
 Take a test that is relevent to your skill set and the job you are applying for.  As an example if you are applying for a full stack role, you might want to do a front end or backend code test, where if you're applying for a backend position you should do a backend test only.
 
+<!---
 ## How to Turn in your Test
-Turn in your test, to Sandra@eBacon.com, prior to the second round of the interviews.  All interview tests should include the solution, along with the markdown file describing the actual test itself.
+Turn in your test, to Sandra@eBacon.com, prior to the second round of the interviews.  All interview tests should include the solution, along with the [//]: [//]: markdown file describing the actual test itself.
+--->
 
 ## Have you Found an Issue?
 If something is unclear, confusing, or downright stupid please tell us!  You can email sandra as mentioned above or you can mention it during the interview.
