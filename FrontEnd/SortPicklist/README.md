@@ -32,25 +32,25 @@ const options = [
 const data = [
   {
     type: Folder,
-    rowId: 1,
-    itemId: 426,
-    name: "Benefits",
+    id: 1,
+    name: 426,
+    decription: "Benefits",
     info: "",
     info2: "",
   },
   {
     type: People,
-    rowId: 1,
-    itemId: 121,
+    id: 121,
     name: "John Doe",
+    decription: "",
     info: "",
     info2: "",
   },
   {
     type: People,
-    rowId: 1,
-    itemId: 128,
+    id: 128,
     name: "Alex Tato",
+    decription: "",
     info: "",
     info2: "",
   },
@@ -61,25 +61,25 @@ const data = [
 $data = [
   [
     "type" => "Folder",
-    "rowId" => 1,
-    "itemId" => 426,
-    "name" => "Benefits",
+    "id" => 1,
+    "name" => 426,
+    "decription" => "Benefits",
     "info" => "",
     "info2" => "",
   ],
   [
     "type" => "People",
-    "rowId" => 1,
-    "itemId" => 121,
+    "id" => 121,
     "name" => "John Doe",
+    "decription" => "",
     "info" => "",
     "info2" => "",
   ],
   [
     "type" => "People",
-    "rowId" => 1,
-    "itemId" => 128,
+    "id" => 128,
     "name" => "Alex Tato",
+    "decription" => "",
     "info" => "",
     "info2" => "",
   ],
@@ -130,7 +130,7 @@ $data = [
 ];
 ```
 
-## Bonus Points:
+## Bonus Points — `Folder` type-specific options and groups
 
 - For `Folder`, the `name` field sometimes hase slashes: `Benefits/Backend`
   - **Note**: this doesn't apply to other option types!
@@ -140,16 +140,16 @@ $data = [
 const data = [
   {
     type: Folder,
-    rowId: 1,
-    itemId: 517,
+    id: 1,
+    name: 517,
     name: "Benefits",
     info: "",
     info2: "",
   },
   {
     type: Folder,
-    rowId: 1,
-    itemId: 519,
+    id: 1,
+    name: 519,
     name: "Benefits/Backend",
     info: "",
     info2: "",
@@ -181,16 +181,16 @@ const options = {
 $data = [
   [
     "type" => "Folder",
-    "rowId" => 1,
-    "itemId" => 517,
+    "id" => 1,
+    "name" => 517,
     "name" => "Benefits",
     "info" => "",
     "info2" => "",
   ],
   [
     "type" => "Folder",
-    "rowId" => 1,
-    "itemId" => 519,
+    "id" => 1,
+    "name" => 519,
     "name" => "Benefits/Backend",
     "info" => "",
     "info2" => "",
@@ -225,8 +225,7 @@ const sortData = (rawData) => {
   // Code here...
 };
 
-// paste mock data here
-// const rawData =
+// import mock data or paste it here
 
 const optionsArray = sortData(rawData);
 console.log(optionsArray);
@@ -243,6 +242,6 @@ function sortData(array $rawData)
 // paste mock data here
 // $rawData =
 
-$optionsArray = formatHTML($rawData);
+$optionsArray = sortData($rawData);
 echo $optionsArray;
 ```
