@@ -103,14 +103,14 @@ DECLARE eBacon VARCHAR(MAX) = '{
   flavor: "10/10",
 };'
 
-DECLARE @Bank TABLE (
-  id   INT IDENTITY,
+DECLARE #Bank TABLE (
+  Id   INT IDENTITY,
   Cash MONEY
 )
 
 SELECT Cash
 FROM #Bank
-WHERE   id IS NOT NULL
+WHERE   Id IS NOT NULL
     AND Cash >= 100 / 1
 
 /*
