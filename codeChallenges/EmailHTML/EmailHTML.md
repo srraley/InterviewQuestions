@@ -148,9 +148,6 @@ const rawHTML = `
         width: fit-content;
         border-collapse: unset;
       }
-      .header-td {
-        shit: YES!;
-      }
       .footer-td {
         border-top: 1px solid #0066cc;
         padding: 12px 30px;
@@ -235,9 +232,6 @@ DECLARE @RawHTML VARCHAR(MAX) = '
         width: fit-content;
         border-collapse: unset;
       }
-      .header-td {
-        shit: YES!;
-      }
       .footer-td {
         border-top: 1px solid #0066cc;
         padding: 12px 30px;
@@ -312,9 +306,6 @@ $rawHTML = '
         margin: 0 auto;
         width: fit-content;
         border-collapse: unset;
-      }
-      .header-td {
-        shit: YES!;
       }
       .footer-td {
         border-top: 1px solid #0066cc;
@@ -399,9 +390,6 @@ class GetEmailHTML
             width: fit-content;
             border-collapse: unset;
           }
-          .header-td {
-            shit: YES!;
-          }
           .footer-td {
             border-top: 1px solid #0066cc;
             padding: 12px 30px;
@@ -480,9 +468,6 @@ rawHTML = """
         margin: 0 auto;
         width: fit-content;
         border-collapse: unset;
-      }
-      .header-td {
-        shit: YES!;
       }
       .footer-td {
         border-top: 1px solid #0066cc;
