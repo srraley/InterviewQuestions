@@ -8,7 +8,7 @@
 
 - Follow this link: https://codesandbox.io/s/ebacon-htmlcss-drawer-test-nf1xn
 - 'Fork' the template (top right-hand corner of screen)
-
+- use the drawerExample.gif (animated gif) as a reference
 ---
 
 ##### There's some basic boilerplate setup already, and the criteria is as follows:
