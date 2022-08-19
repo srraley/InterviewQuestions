@@ -1,0 +1,203 @@
+/*
+-----------------------------
+-- Total Compensation Test --
+-----------------------------
+
+Job Information
+--------------------
+Each job pays an hourly wage as well
+as a benefit hourly wage.
+
+Example Explanation:
+If an employee worked 10 hours at the 'Hospital - Painter' job, 
+then they should recieve $312.50 in wages and an additional 
+$10 that would go towards benefits (ie: health insurance, etc).
+
+Hospital - Painter
+-> Rate: $31.25/hr
+-> Benefits Rate: $1/hr
+
+Hospital - laborer
+-> Rate: $20.00/hr
+-> Benefits Rate: $0.50/hr
+
+Shop - Laborer
+-> Rate: 16.25/hr
+-> Benefits Rate: $1.25/hr
+
+* Overtime Rate is a multipler of 1.5 for hours worked over 40
+* Doubletime Rate is a multiplier of 2 for hours worked over 48
+* Overtime and Doubletime do not affect the Benefits rate
+
+Test Description
+--------------------
+Using the provided JSON data below, process the data to
+determine the amount paid to each employee.  We would like 
+to see the following data in your output for each employee:
+-> Regular Hours (cannot exceed 40 hours)
+-> Overtime Hours (hours that exceeded 40)
+-> Double Time Hours (hours that exceeded 48)
+-> Wage Total (total amount paid to employee based on rate, including overtime/doubletime)
+-> Benefits Total (total amount paid to employee based on benefits rate)
+
+* Example JSON Output:
+[
+    {
+        "employee": "Steve",
+        "regular": 38,
+        "overtime": 0,
+        "doubletime": 0,
+        "wageTotal": 760.00,
+        "benefitTotal:" 19.00
+    },
+    ...
+]
+
+
+**
+    No restrictions on coding languge, use any language you
+    prefer to solve the problem.
+
+    You can reformat the provided JSON into a different format
+    if needed by the language you use.  Your output can be in any
+    readable/consumable format.
+**
+*/
+
+{
+  "jobMeta": [
+    {
+      "job": "Hospital - Painter",
+      "rate": 31.25,
+      "benefitsRate": 1
+    },
+    {
+      "job": "Hospital - Laborer",
+      "rate": 20.0,
+      "benefitsRate": 0.5
+    },
+    {
+      "job": "Shop - Laborer",
+      "rate": 16.25,
+      "benefitsRate": 1.25
+    }
+  ],
+  "employeeData": [
+    {
+      "employee": "Steve",
+      "timePunch": [
+        {
+          "job": "Hospital - Painter",
+          "start": "2022-02-18 06:02:35",
+          "end": "2022-02-18 11:28:54",
+          "total": 123.33
+        },
+        {
+          "job": "Hospital - Painter",
+          "start": "2022-02-18 12:31:06",
+          "end": "2022-02-18 15:00:11"
+        },
+        {
+          "job": "Shop - Laborer",
+          "start": "2022-02-19 07:03:41",
+          "end": "2022-02-19 10:00:45"
+        },
+        {
+          "job": "Hospital - Painter",
+          "start": "2022-02-19 10:24:58",
+          "end": "2022-02-19 12:00:19"
+        },
+        {
+          "job": "Hospital - Painter",
+          "start": "2022-02-19 13:22:13",
+          "end": "2022-02-19 17:16:32"
+        },
+        {
+          "job": "Hospital - Painter",
+          "start": "2022-02-20 05:56:00",
+          "end": "2022-02-20 11:33:23"
+        },
+        {
+          "job": "Hospital - Painter",
+          "start": "2022-02-20 12:18:45",
+          "end": "2022-02-20 17:48:41"
+        },
+        {
+          "job": "Hospital - Painter",
+          "start": "2022-02-21 06:02:28",
+          "end": "2022-02-21 12:22:19"
+        },
+        {
+          "job": "Hospital - Painter",
+          "start": "2022-02-21 13:04:01",
+          "end": "2022-02-21 17:52:06"
+        },
+        {
+          "job": "Hospital - Painter",
+          "start": "2022-02-22 06:00:58",
+          "end": "2022-02-22 11:02:55"
+        },
+        {
+          "job": "Hospital - Painter",
+          "start": "2022-02-22 12:18:04",
+          "end": "2022-02-22 17:48:41"
+        }
+      ]
+    },
+    {
+      "employee": "Alex",
+      "timePunch": [
+        {
+          "job": "Shop - Laborer",
+          "start": "2022-02-18 06:05:55",
+          "end": "2022-02-18 11:18:14"
+        },
+        {
+          "job": "Shop - Laborer",
+          "start": "2022-02-18 11:30:09",
+          "end": "2022-02-18 14:00:01"
+        },
+        {
+          "job": "Shop - Laborer",
+          "start": "2022-02-19 07:18:22",
+          "end": "2022-02-19 11:07:45"
+        },
+        {
+          "job": "Hospital - Laborer",
+          "start": "2022-02-19 12:04:18",
+          "end": "2022-02-19 14:00:19"
+        },
+        {
+          "job": "Shop - Laborer",
+          "start": "2022-02-20 06:06:00",
+          "end": "2022-02-20 10:13:23"
+        },
+        {
+          "job": "Shop - Laborer",
+          "start": "2022-02-20 12:18:45",
+          "end": "2022-02-20 16:58:21"
+        },
+        {
+          "job": "Shop - Laborer",
+          "start": "2022-02-21 06:08:08",
+          "end": "2022-02-21 12:20:55"
+        },
+        {
+          "job": "Shop - Laborer",
+          "start": "2022-02-21 12:54:30",
+          "end": "2022-02-21 16:45:20"
+        },
+        {
+          "job": "Hospital - Laborer",
+          "start": "2022-02-22 06:09:14",
+          "end": "2022-02-22 11:30:11"
+        },
+        {
+          "job": "Hospital - laborer",
+          "start": "2022-02-22 12:00:29",
+          "end": "2022-02-22 17:59:55"
+        }
+      ]
+    }
+  ]
+}
