@@ -95,7 +95,7 @@ total benefit wage. In addition calculate how much in investments the employee w
 
 
 /*Sample Input Json for Benefit Allocations */
-{
+[{
     "BenefitAllocations": [
       {
         "employee": "Steve",
@@ -119,19 +119,20 @@ total benefit wage. In addition calculate how much in investments the employee w
       }
     ]
   }
+]
 
 
 /*Sample Input JSON for investment allocations*/
-{
+[{
     "InvestmentAllocations": [
       {
         "employee": "Steve",
         "InvestmentsPercent": [
           {
-            "APPL": 27,
-            "TSLA": 33,
-            "MSFT": 40,
-            "GME": 30
+            "APPL": 25,
+            "TSLA": 25,
+            "MSFT": 25,
+            "GME": 25
           }
         ]
       },
@@ -139,12 +140,11 @@ total benefit wage. In addition calculate how much in investments the employee w
         "employee": "Alex",
         "InvestmentsPercent": [
           {
-            "TSLA": 22,
-            "MSFT": 45,
-            "ADBE": 3,
-            "GME": 30
+            "TSLA": 33,
+            "ADBE": 33,
+            "GME": 34
           }
         ]
       }
     ]
-  }
+  }]
