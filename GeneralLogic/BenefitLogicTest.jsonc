@@ -96,7 +96,7 @@ total benefit wage. In addition calculate how much in investments the employee w
 
 /*Sample Input Json for Benefit Allocations */
 {
-    "employeeData": [
+    "BenefitAllocations": [
       {
         "employee": "Steve",
         "BenefitPercent": [
@@ -123,7 +123,7 @@ total benefit wage. In addition calculate how much in investments the employee w
 
 /*Sample Input JSON for investment allocations*/
 {
-    "employeeData": [
+    "InvestmentAllocations": [
       {
         "employee": "Steve",
         "InvestmentsPercent": [
