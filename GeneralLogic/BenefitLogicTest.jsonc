@@ -45,7 +45,7 @@ Test Description
 --------------------
 Using the provided JSON data below, process the data to
 determine how much in each benefit the employee will contribute from the calculated 
-total benefit wage. 
+total benefit wage. In addition calculate how much in investments the employee will contribute based on their 401K total contribution
 
 * Example JSON Output for Benefit Calculated:
 [
