@@ -10,10 +10,6 @@ Each employee can elect to have a certain amount of their benefits wages paid to
 down into specific categories based on the benefit type.
 
 Example Explanation:
-If an employee worked 10 hours at the 'Hospital - Painter' job, 
-then they should recieve $312.50 in wages and an additional 
-$10 that would go towards benefits (ie: health insurance, etc).
-
 If an employee received 50 dollars in benefit wages and their elections are as follows: 
 
 401K : 50 % 
