@@ -84,18 +84,18 @@ total benefit wage. In addition calculate how much in investments the employee w
     "employeeData": [
       {
         "employee": "Steve",
-        "Benefit": [
+        "BenefitPercent": [
           {
             "401K": 50,
             "FSA": 20,
             "HSA": 10,
-            "Dental": 10
+            "Dental": 20
           }
         ]
       },
       {
         "employee": "Alex",
-        "Benefit": [
+        "BenefitPercent": [
           {
             "401K": 88,
             "FSA": 12
@@ -111,7 +111,7 @@ total benefit wage. In addition calculate how much in investments the employee w
     "employeeData": [
       {
         "employee": "Steve",
-        "Investments": [
+        "InvestmentsPercent": [
           {
             "APPL": 27,
             "TSLA": 33,
@@ -122,7 +122,7 @@ total benefit wage. In addition calculate how much in investments the employee w
       },
       {
         "employee": "Alex",
-        "Investments": [
+        "InvestmentsPercent": [
           {
             "TSLA": 22,
             "MSFT": 45,
