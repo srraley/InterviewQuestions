@@ -87,7 +87,7 @@ total benefit wage. In addition calculate how much in investments the employee w
         "overtime": 0,
         "doubletime": 0,
         "wageTotal": 760.00,
-        "benefitTotal:" 
+        "benefitTotal:100" 
     },
     ...
 ]
