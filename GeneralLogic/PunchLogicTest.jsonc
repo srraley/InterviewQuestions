@@ -89,8 +89,7 @@ to see the following data in your output for each employee:
         {
           "job": "Hospital - Painter",
           "start": "2022-02-18 06:02:35",
-          "end": "2022-02-18 11:28:54",
-          "total": 123.33
+          "end": "2022-02-18 11:28:54"
         },
         {
           "job": "Hospital - Painter",
@@ -193,7 +192,7 @@ to see the following data in your output for each employee:
           "end": "2022-02-22 11:30:11"
         },
         {
-          "job": "Hospital - laborer",
+          "job": "Hospital - Laborer",
           "start": "2022-02-22 12:00:29",
           "end": "2022-02-22 17:59:55"
         }
