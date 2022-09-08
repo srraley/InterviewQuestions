@@ -1,0 +1,53 @@
+/*
+-----------------------------
+-- Dividend Logic Test --
+-----------------------------
+
+Job Information
+--------------------
+
+Imagine a dividend has been issued and there is a group of employees that have this investment. Write a method to distribution that diviend to each employee porportional 
+to the amount of money that individual compared to the group. 
+
+For example: 
+
+Dividend Amount: 100 
+
+Person A Total : 1000 
+Person B Total: 500 
+Person C Total: 500
+
+Person A Percentage: 50% 
+Person B Percentage: 25% 
+Person C Percentage: 25% 
+
+Person A Dividend Amount: $50 (50% * 100)
+Person B Dividend Amount: $25 (25% * 100)
+Person C Dividend AMount: $25 (25% * 100)
+*/
+
+Total Dividend Amount: 100
+
+{
+    "EmployeeData": [
+      {
+        "Name": "Person A",
+        "Amount": 1000,
+        "Investment": "TSLA"
+        
+      },
+      {
+        "Name": "Person B",
+        "Amount":500,
+        "Investment": "TSLA"
+
+      },
+      {
+        "Name": "Person C",
+        "Amount":500,
+        "Investment": "TSLA"
+
+      },
+    ],
+   }
+  
