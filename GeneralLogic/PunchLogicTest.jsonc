@@ -13,7 +13,7 @@ General Labor after lunch.
 You will calculate rates/wages based on the number of hours worked.  Example:
   - 0 to 40 hours is regular time
   - Any time worked after 40 and up to 48 hours is overtime
-  - Any time worked over 48 hours is dobule time
+  - Any time worked over 48 hours is double time
 
 
 
@@ -39,7 +39,7 @@ Shop - Laborer
 -> Benefits Rate: $1.25/hr
 
 * Overtime (OT) Rate is a multipler of 1.5 for hours worked over 40
-* Doubletime (DT) Rate is a multiplier of 2 for hours worked over 48
+* Doubletime (DT) Rate is a multipler of 2 for hours worked over 48
 * OT and DT do not affect the Benefits rate but should be calculated for every hour worked
 
 * Example Calculation for Regular/OT/DT/Benefits: *
@@ -100,8 +100,7 @@ to see the following data in your output for each employee:
     No restrictions on coding languge, use any language you
     prefer to solve the problem.
 
-    You can reformat the provided JSON into a different format
-    if needed by the language you use.  
+    Feel free to reformat the meta data as needed.
     
     Your output can be in any format you feel would be consumable
     (ie: array of objects or a large object), the only requirement is the that
