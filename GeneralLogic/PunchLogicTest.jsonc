@@ -82,15 +82,17 @@ to see the following data in your output for each employee:
 -> Wage Total (total amount paid to employee based on rate, including overtime/doubletime)
 -> Benefits Total (total amount paid to employee based on benefits rate)
 
-* Example JSON Output:
+* Example JSON Output
+* This is also the correct calculation for the employee named Alex.
+* You can use this value to test your code
 [
     {
-        "employee": "Steve",
-        "regular": 38,
-        "overtime": 0,
-        "doubletime": 0,
-        "wageTotal": 760.00,
-        "benefitTotal:" 19.00
+        employee: "Alex"
+        regular: "40.0000"
+        overtime: "3.6428"
+        doubletime: "0.0000"
+        wageTotal: "795.3979"
+        benefitTotal: "44.5985"
     },
     ...
 ]
