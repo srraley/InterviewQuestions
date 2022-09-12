@@ -3,10 +3,23 @@
 -- Total Compensation Test --
 -----------------------------
 
+General Information about this Test
+-----------------------------------------
+Assume you are calculating general payroll information for a 
+construction company.  This company has employees that could do various
+jobs/tasks every day. An employee might start his/her day as a Painter but transition to 
+General Labor after lunch.  
+
+You will calculate rates/wages based on the number of hours worked.  Example:
+  - 0 to 40 hours is regular time
+  - Any time worked after 40 and up to 48 hours is overtime
+  - Any time worked over 48 hours is dobule time
+
+
+
 Job Information
---------------------
-Each job pays an hourly wage as well
-as a benefit hourly wage.
+-----------------------------------------
+Each job pays an hourly wage as well as a benefit hourly wage.
 
 Example Explanation:
 If an employee worked 10 hours at the 'Hospital - Painter' job, 
@@ -25,12 +38,22 @@ Shop - Laborer
 -> Rate: 16.25/hr
 -> Benefits Rate: $1.25/hr
 
-* Overtime Rate is a multipler of 1.5 for hours worked over 40
-* Doubletime Rate is a multiplier of 2 for hours worked over 48
-* Overtime and Doubletime do not affect the Benefits rate
+* Overtime (OT) Rate is a multipler of 1.5 for hours worked over 40
+* Doubletime (DT) Rate is a multiplier of 2 for hours worked over 48
+* OT and DT do not affect the Benefits rate but should should be calculated for every hour worked
 
-Test Description
---------------------
+Example for Overtime/Double Time:
+Let’s the construction company sends an out to a job site to do some painting (Hospital – Painter).  
+They work four 10 hour days to complete the job on time, that employee will get paid 40 * 31.25 for that work.
+On the last day of the week they have that same employee clean up the workshop area (Shop – Laborer), 
+which takes them 8 hours.  
+
+Since the employee is over 40 hours for the week already, they get paid overtime 
+(multiplier of 1.5).  For those 8 hours the employee will make $24.375 per hour (16.25/hr * 1.5).
+The total check for that employee in this example should be $1,445.00.
+
+Test Details
+-----------------------------------------
 Using the provided JSON data below, process the data to
 determine the amount paid to each employee.  We would like 
 to see the following data in your output for each employee:
@@ -59,8 +82,11 @@ to see the following data in your output for each employee:
     prefer to solve the problem.
 
     You can reformat the provided JSON into a different format
-    if needed by the language you use.  Your output can be in any
-    readable/consumable format.
+    if needed by the language you use.  
+    
+    Your output can be in any format you want feel would be consumable
+    (ie: array of objects or a large object), the only requirement is the that
+    the keys listed above are present.
 **
 */
 
