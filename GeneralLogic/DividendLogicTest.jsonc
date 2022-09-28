@@ -31,8 +31,8 @@ APPL Dividend: 50
 Person A Dividend Amount: $50 (50% * 100)
 Person B Dividend Amount: $25 (25% * 100)
 Person C Dividend AMount: $25 (25% * 100)
-Person A Dividend Amount APPL: 31 (62% * 50)
-Person B Dividend Amoutn APPL: 19 * (38% * 50)
+Person A Dividend Amount APPL: $31 (62% * 50)
+Person B Dividend Amoutn APPL: $19 * (38% * 50)
 */
 
 
