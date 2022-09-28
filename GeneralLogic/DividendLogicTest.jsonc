@@ -36,6 +36,20 @@ Person B Dividend Amoutn APPL: $19 * (38% * 50)
 */
 
 
+{
+    "DividendAmounts": [
+        {
+            "Investment": "TSLA",
+            "Amount": 100
+            },
+        {
+            "Investment": "APPL"
+            "Amount": 50
+            },
+        ]
+    
+}
+
 
 {
     "EmployeeData": [
