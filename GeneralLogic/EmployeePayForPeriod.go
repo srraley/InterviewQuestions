@@ -64,7 +64,6 @@ func getTotalBenefits(runningBenefits, hours, benefitsRate float64) float64 {
 
 func calculateWages(hoursWorked, rate, rateMultiplier float64) float64 {
 	return RoundTo(hoursWorked*(rate*rateMultiplier), DECIMAL_PLACES)
-
 }
 
 func RoundTo(n float64, decimals uint32) float64 {
