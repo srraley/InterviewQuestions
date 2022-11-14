@@ -16,8 +16,7 @@ type EmployeePayForPeriod struct {
 }
 
 func GetEmployeePayForPeriod(jobsMap map[string]Job, employee Employee) EmployeePayForPeriod {
-	var totalWages float64
-	var totalBenefits float64
+	var totalWages, totalBenefits float64
 	var totalHourlyData TotalHourlyData
 
 	for _, tPunch := range employee.TimePunchList {
