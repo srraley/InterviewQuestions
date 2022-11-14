@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"math"
 	"time"
 )
@@ -40,8 +41,14 @@ func GetEmployeePayForPeriod(jobsMap map[string]Job, employee Employee) Employee
 
 func getHoursWorked(tPunch TimePunch) float64 {
 	layout := "2006-01-02 15:04:05"
-	start, _ := time.Parse(layout, tPunch.Start)
-	end, _ := time.Parse(layout, tPunch.End)
+	start, err := time.Parse(layout, tPunch.Start)
+	if err != nil {
+		log.Fatal(err)
+	}
+	end, err := time.Parse(layout, tPunch.End)
+	if err != nil {
+		log.Fatal(err)
+	}
 	return RoundTo(end.Sub(start).Hours(), DECIMAL_PLACES)
 }
 
