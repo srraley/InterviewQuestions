@@ -85,7 +85,6 @@ func getProcessedTimePunchData(totalHours float64, hours float64) []processedTim
 
 		} else {
 			return []processedTimePunchData{{TIME_AND_HALF_MULT, hours}}
-
 		}
 
 	} else { //case of total hours over 48
@@ -96,8 +95,6 @@ func getProcessedTimePunchData(totalHours float64, hours float64) []processedTim
 
 		} else {
 			return []processedTimePunchData{{DBL_WAGE_MULT, hours}}
-
 		}
-
 	}
 }
