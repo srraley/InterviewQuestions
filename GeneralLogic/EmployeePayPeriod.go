@@ -74,11 +74,11 @@ func RoundTo(n float64, decimals uint32) float64 {
 
 func getProcessedTimePunchData(totalHours float64, hours float64) []processedTimePunchData {
 
-	if totalHours < OVERTIME_LIMIT {
+	if totalHours < OVERTIME_LIMIT { //case of total hours under 40
 		return []processedTimePunchData{{REG_WAGE_MULT, hours}}
 
-	} else if totalHours > OVERTIME_LIMIT && totalHours < DBLTIME_LIMIT {
-		if totalHours-hours < OVERTIME_LIMIT {
+	} else if totalHours > OVERTIME_LIMIT && totalHours < DBLTIME_LIMIT { //case of total hours between 40 and 48
+		if totalHours-hours < OVERTIME_LIMIT { //case of partial time at regular pay and partial time at overtime pay
 			hoursUnder40 := OVERTIME_LIMIT - (totalHours - hours)
 			hoursOver40 := hours - hoursUnder40
 			return []processedTimePunchData{{REG_WAGE_MULT, hoursUnder40}, {TIME_AND_HALF_MULT, hoursOver40}}
@@ -87,8 +87,9 @@ func getProcessedTimePunchData(totalHours float64, hours float64) []processedTim
 			return []processedTimePunchData{{TIME_AND_HALF_MULT, hours}}
 
 		}
-	} else {
-		if totalHours-hours < DBLTIME_LIMIT {
+
+	} else { //case of total hours over 48
+		if totalHours-hours < DBLTIME_LIMIT { //case of partial time at overtime pay and partial time at double pay
 			hoursUnder48 := DBLTIME_LIMIT - (totalHours - hours)
 			hoursOver48 := hours - (hoursUnder48)
 			return []processedTimePunchData{{TIME_AND_HALF_MULT, hoursUnder48}, {DBL_WAGE_MULT, hoursOver48}}
