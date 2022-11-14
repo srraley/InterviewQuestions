@@ -1,0 +1,53 @@
+package main
+
+const REG_WAGE_MULT = 1
+const TIME_AND_HALF_MULT = 1.5
+const DBL_WAGE_MULT = 2
+const OVERTIME_LIMIT = 40
+const DBLTIME_LIMIT = 48
+
+type Data struct {
+	JobMeta      `json:"jobMeta"`
+	EmployeeData `json:"employeeData"`
+}
+
+type JobMeta []struct {
+	Job          string  `json:"job"`
+	Rate         float64 `json:"rate"`
+	BenefitsRate float64 `json:"benefitsRate"`
+}
+
+type EmployeeData []Employee
+
+type Employee struct {
+	Employee      string `json:"employee"`
+	TimePunchList `json:"timePunch"`
+}
+
+type TimePunchList []TimePunch
+
+type TimePunch struct {
+	Job   string `json:"job"`
+	Start string `json:"start"`
+	End   string `json:"end"`
+}
+
+type Job struct {
+	rate         float64
+	benefitsRate float64
+}
+
+type processedTimePunchData struct {
+	wageMultiplier float64
+	hoursWorked    float64
+}
+
+func GetJobsMap(data Data) map[string]Job {
+	jobs := make(map[string]Job)
+
+	for _, job := range data.JobMeta {
+		jobs[job.Job] = Job{rate: job.Rate, benefitsRate: job.BenefitsRate}
+	}
+
+	return jobs
+}
