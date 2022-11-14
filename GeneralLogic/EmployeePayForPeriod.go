@@ -77,23 +77,20 @@ func getProcessedTimePunchData(totalHours, hours float64) []processedTimePunchDa
 		return []processedTimePunchData{{REG_WAGE_MULT, hours}}
 
 	} else if totalHours > OVERTIME_LIMIT && totalHours < DBLTIME_LIMIT { //case of total hours between 40 and 48
-		if totalHours-hours < OVERTIME_LIMIT { //case of partial time at regular pay and partial time at overtime pay
-			hoursUnder40 := OVERTIME_LIMIT - (totalHours - hours)
-			hoursOver40 := hours - hoursUnder40
-			return []processedTimePunchData{{REG_WAGE_MULT, hoursUnder40}, {TIME_AND_HALF_MULT, hoursOver40}}
-
-		} else {
-			return []processedTimePunchData{{TIME_AND_HALF_MULT, hours}}
-		}
+		return getProcessedDataOver40(totalHours, hours, OVERTIME_LIMIT, REG_WAGE_MULT, TIME_AND_HALF_MULT)
 
 	} else { //case of total hours over 48
-		if totalHours-hours < DBLTIME_LIMIT { //case of partial time at overtime pay and partial time at double pay
-			hoursUnder48 := DBLTIME_LIMIT - (totalHours - hours)
-			hoursOver48 := hours - (hoursUnder48)
-			return []processedTimePunchData{{TIME_AND_HALF_MULT, hoursUnder48}, {DBL_WAGE_MULT, hoursOver48}}
+		return getProcessedDataOver40(totalHours, hours, DBLTIME_LIMIT, TIME_AND_HALF_MULT, DBL_WAGE_MULT)
+	}
+}
 
-		} else {
-			return []processedTimePunchData{{DBL_WAGE_MULT, hours}}
-		}
+func getProcessedDataOver40(totalHours, hours, hourLimit, lowerWageMult, upperWageMult float64) []processedTimePunchData {
+	if totalHours-hours < hourLimit { //case of partial time at overtime pay and partial time at double pay
+		hoursUnderLimit := hourLimit - (totalHours - hours)
+		hoursOverLimit := hours - (hoursUnderLimit)
+		return []processedTimePunchData{{lowerWageMult, hoursUnderLimit}, {upperWageMult, hoursOverLimit}}
+
+	} else {
+		return []processedTimePunchData{{upperWageMult, hours}}
 	}
 }
