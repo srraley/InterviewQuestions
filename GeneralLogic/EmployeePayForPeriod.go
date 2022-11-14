@@ -59,11 +59,11 @@ func getTotalWages(runningWages float64, data []processedTimePunchData, rate flo
 	return runningWages
 }
 
-func getTotalBenefits(runningBenefits float64, hours float64, benefitsRate float64) float64 {
+func getTotalBenefits(runningBenefits, hours, benefitsRate float64) float64 {
 	return RoundTo(runningBenefits+calculateWages(hours, benefitsRate, REG_WAGE_MULT), DECIMAL_PLACES)
 }
 
-func calculateWages(hoursWorked float64, rate float64, rateMultiplier float64) float64 {
+func calculateWages(hoursWorked, rate, rateMultiplier float64) float64 {
 	return RoundTo(hoursWorked*(rate*rateMultiplier), DECIMAL_PLACES)
 
 }
@@ -72,7 +72,7 @@ func RoundTo(n float64, decimals uint32) float64 {
 	return math.Round(n*math.Pow(10, float64(decimals))) / math.Pow(10, float64(decimals))
 }
 
-func getProcessedTimePunchData(totalHours float64, hours float64) []processedTimePunchData {
+func getProcessedTimePunchData(totalHours, hours float64) []processedTimePunchData {
 
 	if totalHours < OVERTIME_LIMIT { //case of total hours under 40
 		return []processedTimePunchData{{REG_WAGE_MULT, hours}}
