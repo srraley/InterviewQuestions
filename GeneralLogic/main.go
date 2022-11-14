@@ -31,7 +31,10 @@ func main() {
 		empPayPeriods = append(empPayPeriods, GetEmployeePayForPeriod(jobsMap, emp))
 	}
 
-	employeePayJSON, _ := json.Marshal(empPayPeriods)
+	employeePayJSON, err := json.Marshal(empPayPeriods)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	fmt.Println(string(employeePayJSON))
 
