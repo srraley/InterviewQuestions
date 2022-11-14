@@ -30,7 +30,7 @@ func GetEmployeePayForPeriod(jobsMap map[string]Job, employee Employee) Employee
 
 	return EmployeePayForPeriod{
 		employee.Employee,
-		totalHourlyData.Total(),
+		totalHourlyData.Regular(),
 		totalHourlyData.Overtime(),
 		totalHourlyData.DoubleTime(),
 		totalWages,

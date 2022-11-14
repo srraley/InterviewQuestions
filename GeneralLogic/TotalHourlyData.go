@@ -4,7 +4,7 @@ type TotalHourlyData struct {
 	totalHours float64
 }
 
-func (t TotalHourlyData) Total() float64 {
+func (t TotalHourlyData) Regular() float64 {
 	if t.totalHours > OVERTIME_LIMIT {
 		return OVERTIME_LIMIT
 	}
