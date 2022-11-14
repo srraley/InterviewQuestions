@@ -42,7 +42,7 @@ func getHoursWorked(tPunch TimePunch) float64 {
 	layout := "2006-01-02 15:04:05"
 	start, _ := time.Parse(layout, tPunch.Start)
 	end, _ := time.Parse(layout, tPunch.End)
-	return RoundTo(end.Sub(start).Hours(), 4)
+	return RoundTo(end.Sub(start).Hours(), DECIMAL_PLACES)
 }
 
 func getTotalWages(runningWages float64, data []processedTimePunchData, rate float64) float64 {
@@ -53,11 +53,11 @@ func getTotalWages(runningWages float64, data []processedTimePunchData, rate flo
 }
 
 func getTotalBenefits(runningBenefits float64, hours float64, benefitsRate float64) float64 {
-	return RoundTo(runningBenefits+calculateWages(hours, benefitsRate, REG_WAGE_MULT), 4)
+	return RoundTo(runningBenefits+calculateWages(hours, benefitsRate, REG_WAGE_MULT), DECIMAL_PLACES)
 }
 
 func calculateWages(hoursWorked float64, rate float64, rateMultiplier float64) float64 {
-	return RoundTo(hoursWorked*(rate*rateMultiplier), 4)
+	return RoundTo(hoursWorked*(rate*rateMultiplier), DECIMAL_PLACES)
 
 }
 

@@ -15,12 +15,12 @@ func (t TotalHourlyData) Overtime() float64 {
 	if t.totalHours < OVERTIME_LIMIT {
 		return 0
 	}
-	return RoundTo(t.totalHours-(OVERTIME_LIMIT+t.DoubleTime()), 4)
+	return RoundTo(t.totalHours-(OVERTIME_LIMIT+t.DoubleTime()), DECIMAL_PLACES)
 }
 
 func (t TotalHourlyData) DoubleTime() float64 {
 	if t.totalHours < DBLTIME_LIMIT {
 		return 0
 	}
-	return RoundTo(t.totalHours-DBLTIME_LIMIT, 4)
+	return RoundTo(t.totalHours-DBLTIME_LIMIT, DECIMAL_PLACES)
 }

@@ -5,6 +5,7 @@ const TIME_AND_HALF_MULT = 1.5
 const DBL_WAGE_MULT = 2
 const OVERTIME_LIMIT = 40
 const DBLTIME_LIMIT = 48
+const DECIMAL_PLACES = 4
 
 type Data struct {
 	JobMeta      `json:"jobMeta"`
