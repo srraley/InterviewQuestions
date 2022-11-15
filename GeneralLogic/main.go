@@ -14,13 +14,9 @@ func main() {
 
 	data := processEmployeePay.ParseJSONCtoData(JSONC_FILE)
 	jobsMap := processEmployeePay.GetJobsMap(data)
-	empPayPeriods := []processEmployeePay.EmployeePayForPeriod{}
+	empPaycheques := processEmployeePay.GetPayCheques(data, jobsMap)
 
-	for _, emp := range data.EmployeeData {
-		empPayPeriods = append(empPayPeriods, processEmployeePay.GetEmployeePayForPeriod(jobsMap, emp))
-	}
-
-	employeePayJSON, err := json.Marshal(empPayPeriods)
+	employeePayJSON, err := json.Marshal(empPaycheques)
 	if err != nil {
 		log.Fatal(err)
 	}
