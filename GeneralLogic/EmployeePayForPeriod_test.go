@@ -38,13 +38,13 @@ func TestGetHoursWorked(t *testing.T) {
 func TestTotalWages(t *testing.T) {
 	cases := []struct {
 		runningWages float64
-		data         []processedTimePunchData
+		data         []processedTimeData
 		rate         float64
 		expected     float64
 	}{
 		{
 			1000.00,
-			[]processedTimePunchData{
+			[]processedTimeData{
 				{
 					1.0,
 					8.0,
@@ -138,8 +138,7 @@ func TestRoundTo(t *testing.T) {
 			2,
 			1234.57,
 		},
-		{
-			1234.5628912345,
+		{   1234.562891245,
 			2,
 			1234.56,
 		},

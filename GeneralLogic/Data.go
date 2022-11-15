@@ -38,11 +38,6 @@ type Job struct {
 	benefitsRate float64
 }
 
-type processedTimePunchData struct {
-	wageMultiplier float64
-	hoursWorked    float64
-}
-
 // job.job is using the name of the job as a key
 func GetJobsMap(data Data) map[string]Job {
 	jobs := make(map[string]Job)

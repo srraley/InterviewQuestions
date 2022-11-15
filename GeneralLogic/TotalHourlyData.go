@@ -4,6 +4,11 @@ type TotalHourlyData struct {
 	totalHours float64
 }
 
+type processedTimeData struct {
+	wageMultiplier float64
+	hoursWorked    float64
+}
+
 func (t TotalHourlyData) Regular() float64 {
 	if t.totalHours > OVERTIME_LIMIT {
 		return OVERTIME_LIMIT
@@ -25,9 +30,9 @@ func (t TotalHourlyData) DoubleTime() float64 {
 	return RoundTo(t.totalHours-DBLTIME_LIMIT, DECIMAL_PLACES)
 }
 
-func GetProcessedTimeData(totalHours, hours float64) []processedTimePunchData {
+func GetProcessedTimeData(totalHours, hours float64) []processedTimeData {
 	if totalHours <= OVERTIME_LIMIT { //case of total hours under 40
-		return []processedTimePunchData{{REG_WAGE_MULT, hours}}
+		return []processedTimeData{{REG_WAGE_MULT, hours}}
 
 	} else if totalHours > OVERTIME_LIMIT && totalHours <= DBLTIME_LIMIT { //case of total hours between 40 and 48
 		return getProcessedDataOver40(totalHours, hours, OVERTIME_LIMIT, REG_WAGE_MULT, TIME_AND_HALF_MULT)
@@ -37,14 +42,14 @@ func GetProcessedTimeData(totalHours, hours float64) []processedTimePunchData {
 	}
 }
 
-func getProcessedDataOver40(totalHours, hours, hourLimit, lowerWageMult, upperWageMult float64) []processedTimePunchData {
+func getProcessedDataOver40(totalHours, hours, hourLimit, lowerWageMult, upperWageMult float64) []processedTimeData {
 	if totalHours-hours < hourLimit { //case of partial time at reg/overtime pay and partial time at overtime/double pay
 		hoursUnderLimit := hourLimit - (totalHours - hours)
 		hoursOverLimit := hours - (hoursUnderLimit)
-		return []processedTimePunchData{{lowerWageMult, hoursUnderLimit}, {upperWageMult, hoursOverLimit}}
+		return []processedTimeData{{lowerWageMult, hoursUnderLimit}, {upperWageMult, hoursOverLimit}}
 
 	} else {
-		return []processedTimePunchData{{upperWageMult, hours}}
+		return []processedTimeData{{upperWageMult, hours}}
 	}
 }
 

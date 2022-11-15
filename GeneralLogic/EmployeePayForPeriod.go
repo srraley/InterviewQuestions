@@ -51,7 +51,7 @@ func getHoursWorked(tPunch TimePunch) float64 {
 	return RoundTo(end.Sub(start).Hours(), DECIMAL_PLACES)
 }
 
-func getTotalWages(runningWages float64, data []processedTimePunchData, rate float64) float64 {
+func getTotalWages(runningWages float64, data []processedTimeData, rate float64) float64 {
 	for _, d := range data {
 		runningWages += calculateWages(d.hoursWorked, rate, d.wageMultiplier)
 	}
