@@ -21,10 +21,10 @@ func GetEmployeePayForPeriod(jobsMap map[string]Job, employee Employee) Employee
 
 	for _, tPunch := range employee.TimePunchList {
 		hours := getHoursWorked(tPunch)
-		totalHourlyData.totalHours += hours
+		SetTotalHours(&totalHourlyData, hours)
 		rate := jobsMap[tPunch.Job].rate
 		benefitsRate := jobsMap[tPunch.Job].benefitsRate
-		totalWages = getTotalWages(totalWages, getProcessedTimePunchData(totalHourlyData.totalHours, hours), rate)
+		totalWages = getTotalWages(totalWages, GetProcessedTimeData(totalHourlyData.totalHours, hours), rate)
 		totalBenefits = getTotalBenefits(totalBenefits, hours, benefitsRate)
 	}
 
@@ -68,27 +68,4 @@ func calculateWages(hoursWorked, rate, rateMultiplier float64) float64 {
 
 func RoundTo(n float64, decimals uint32) float64 {
 	return math.Round(n*math.Pow(10, float64(decimals))) / math.Pow(10, float64(decimals))
-}
-
-func getProcessedTimePunchData(totalHours, hours float64) []processedTimePunchData {
-	if totalHours <= OVERTIME_LIMIT { //case of total hours under 40
-		return []processedTimePunchData{{REG_WAGE_MULT, hours}}
-
-	} else if totalHours > OVERTIME_LIMIT && totalHours <= DBLTIME_LIMIT { //case of total hours between 40 and 48
-		return getProcessedDataOver40(totalHours, hours, OVERTIME_LIMIT, REG_WAGE_MULT, TIME_AND_HALF_MULT)
-
-	} else { //case of total hours over 48
-		return getProcessedDataOver40(totalHours, hours, DBLTIME_LIMIT, TIME_AND_HALF_MULT, DBL_WAGE_MULT)
-	}
-}
-
-func getProcessedDataOver40(totalHours, hours, hourLimit, lowerWageMult, upperWageMult float64) []processedTimePunchData {
-	if totalHours-hours < hourLimit { //case of partial time at reg/overtime pay and partial time at overtime/double pay
-		hoursUnderLimit := hourLimit - (totalHours - hours)
-		hoursOverLimit := hours - (hoursUnderLimit)
-		return []processedTimePunchData{{lowerWageMult, hoursUnderLimit}, {upperWageMult, hoursOverLimit}}
-
-	} else {
-		return []processedTimePunchData{{upperWageMult, hours}}
-	}
 }
