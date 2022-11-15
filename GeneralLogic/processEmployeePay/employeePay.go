@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-type EmployeePayForPeriod struct {
+type EmployeePay struct {
 	Employee     string
 	Regular      float64
 	Overtime     float64
@@ -15,24 +15,24 @@ type EmployeePayForPeriod struct {
 	BenefitTotal float64
 }
 
-func GetEmployeePayForPeriod(jobsMap map[string]Job, employee Employee) EmployeePayForPeriod {
+func GetEmployeePay(jobsMap map[string]Job, employee Employee) EmployeePay {
 	var totalWages, totalBenefits float64
-	var totalHourlyData TotalHourlyData
+	var hourlyTotals HourlyTotals
 
 	for _, tPunch := range employee.TimePunchList {
 		hours := getHoursWorked(tPunch)
-		SetTotalHours(&totalHourlyData, hours)
+		SetTotalHours(&hourlyTotals, hours)
 		rate := jobsMap[tPunch.Job].rate
 		benefitsRate := jobsMap[tPunch.Job].benefitsRate
-		totalWages = getTotalWages(totalWages, GetProcessedTimeData(totalHourlyData.totalHours, hours), rate)
+		totalWages = getTotalWages(totalWages, GetProcessedTimeData(hourlyTotals.totalHours, hours), rate)
 		totalBenefits = getTotalBenefits(totalBenefits, hours, benefitsRate)
 	}
 
-	return EmployeePayForPeriod{
+	return EmployeePay{
 		employee.Employee,
-		totalHourlyData.Regular(),
-		totalHourlyData.Overtime(),
-		totalHourlyData.DoubleTime(),
+		hourlyTotals.Regular(),
+		hourlyTotals.Overtime(),
+		hourlyTotals.DoubleTime(),
 		totalWages,
 		totalBenefits,
 	}

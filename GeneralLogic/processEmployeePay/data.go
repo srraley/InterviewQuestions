@@ -74,11 +74,11 @@ func ParseJSONCtoData(fileName string) Data {
 	return data
 }
 
-func GetPayCheques(data Data, jMap map[string]Job) []EmployeePayForPeriod {
-	empPaycheques := []EmployeePayForPeriod{}
+func GetPayCheques(data Data, jMap map[string]Job) []EmployeePay {
+	empPaycheques := []EmployeePay{}
 
 	for _, emp := range data.EmployeeData {
-		empPaycheques = append(empPaycheques, GetEmployeePayForPeriod(jMap, emp))
+		empPaycheques = append(empPaycheques, GetEmployeePay(jMap, emp))
 	}
 
 	return empPaycheques
