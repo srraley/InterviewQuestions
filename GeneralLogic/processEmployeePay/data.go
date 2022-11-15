@@ -1,4 +1,4 @@
-package main
+package processEmployeePay
 
 const REG_WAGE_MULT = 1
 const TIME_AND_HALF_MULT = 1.5

@@ -6,29 +6,31 @@ import (
 	"log"
 	"os"
 
+	"myapp/processEmployeePay"
+
 	"muzzammil.xyz/jsonc"
 )
 
 func main() {
 
-	content, err := os.ReadFile("./data/PunchLogicTest.jsonc")
+	content, err := os.ReadFile("./jsonc/PunchLogicTest.jsonc")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	data := Data{}
+	data := processEmployeePay.Data{}
 
 	err = json.Unmarshal(jsonc.ToJSON(content), &data)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	jobsMap := GetJobsMap(data)
+	jobsMap := processEmployeePay.GetJobsMap(data)
 
-	empPayPeriods := []EmployeePayForPeriod{}
+	empPayPeriods := []processEmployeePay.EmployeePayForPeriod{}
 
 	for _, emp := range data.EmployeeData {
-		empPayPeriods = append(empPayPeriods, GetEmployeePayForPeriod(jobsMap, emp))
+		empPayPeriods = append(empPayPeriods, processEmployeePay.GetEmployeePayForPeriod(jobsMap, emp))
 	}
 
 	employeePayJSON, err := json.Marshal(empPayPeriods)

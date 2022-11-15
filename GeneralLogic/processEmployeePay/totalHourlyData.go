@@ -1,4 +1,4 @@
-package main
+package processEmployeePay
 
 type TotalHourlyData struct {
 	totalHours float64
