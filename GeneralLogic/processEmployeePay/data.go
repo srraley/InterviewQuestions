@@ -1,5 +1,13 @@
 package processEmployeePay
 
+import (
+	"encoding/json"
+	"log"
+	"os"
+
+	"muzzammil.xyz/jsonc"
+)
+
 const REG_WAGE_MULT = 1
 const TIME_AND_HALF_MULT = 1.5
 const DBL_WAGE_MULT = 2
@@ -47,4 +55,21 @@ func GetJobsMap(data Data) map[string]Job {
 	}
 
 	return jobs
+}
+
+func ParseJSONCtoData(fileName string) Data {
+
+	content, err := os.ReadFile(fileName)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	data := Data{}
+
+	err = json.Unmarshal(jsonc.ToJSON(content), &data)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return data
 }
